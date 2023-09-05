@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <script src="https://kit.fontawesome.com/385564b33e.js" crossorigin="anonymous"></script>
+  <title>Posts</title>
+  <style>
+    /* 頁面樣式設計 */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f0f3;
+    }
+
+    .container {
+      max-width: 400px;
+      min-height: 800px;
+      margin: 0 auto;
+      padding: 25px;
+      background-color: #322C3F;
+      border-radius: 24px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      justify-content: center;
+      align-items: center;
+      /* 設定高度以便於示範效果 */
+      color: whitesmoke;
+      
+    }
+
+
+.profile {
+  display: flex;
+  align-items: center;
+ 
+}
+
+
+
+.profile-header img {
+  flex:1;
+  max-width: 1/3%;
+  height: 120px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  
+}
+
+.discription {
+  flex:2; 
+  max-width: 2/3%;
+  height: 120px;
+  background-color: #473952;
+  border-radius: 24px;
+  padding: 25px;
+  margin-bottom: 10px;
+  margin-left: 20px;
+  text-align: center;
+}
+
+.discription-text {
+  display: flex;
+  align-items: center;
+}
+
+.first-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 45px;
+}
+
+.left {
+  margin-right: auto;
+  font-size: 25px ;
+}
+
+.right {
+  margin-left: auto;
+}
+
+.center {
+  margin-top: -100px;  
+  margin-left: 100px;
+  margin-right: auto;
+  display: block;
+}
+
+
+.edit {
+  border: none;
+  background-color:  #473952;
+  height: 35px;
+  width: 35px;
+  color: whitesmoke;  
+  margin-right: 0px;
+  cursor: pointer;
+
+}
+
+b_button {
+      display: block;
+      margin-top: -50px;
+      margin-left: 205px;
+      padding: 5px 10px;
+      background-color: #664D9A;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+    }
+
+    .profile-stats {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0px;
+  margin-top: 20px;
+}
+
+.profile-stats div {
+  flex: 1;
+  margin-left: 40px;
+  
+}
+
+.profile-stats span:first-child {
+  font-weight: bold;
+}
+
+.profile-stats div {
+  flex: 1;
+  margin-left: 38px;
+}
+
+.profile-stats span:first-child {
+  font-weight: bold;
+}
+.popup {
+    cursor: pointer;
+}
+
+.popup .popuptext {
+    visibility: hidden;
+}
+
+.popup .show {
+    visibility: visible;
+}
+
+    
+.post {
+        justify-content: flex-start;
+        width: 340px;
+        height: 130px;
+        border-radius: 24px;
+        padding: 30px;
+        margin-top: 30px;
+        margin-bottom: 0px;
+        background-color: #473952;
+        
+    }
+
+
+    .post-img {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        position: absolute;
+    }
+
+  .post textarea {
+        width: 200%;
+        height: 500px;
+        border: none;
+        resize: none;
+    }
+
+    .post button {
+      display: block;
+      margin-top: 0px;
+      margin-left: 175px;
+      padding: 5px 10px;
+      background-color: #664D9A;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+    }
+
+    .post p,span{
+      color: white;
+      margin-top: 16px;
+      margin-bottom: 5px;
+      margin-left: -12px;
+    }
+
+    .hidden-post p{
+      color:black;
+      margin-top: 0px;
+      margin-bottom: 10px;
+      margin-left: 0px;
+    }
+
+    .nameContainer p{
+      color: white;
+      font-size: 20px;
+      margin-top: 40px;
+      margin-left: 85px;
+      position: absolute;
+    }
+
+    .twoThings{
+      margin-top: 16px;
+    }
+
+    .twoThings span{
+      display: inline-block;
+      color: white;
+    
+      margin-top: 2px;
+      margin-bottom: 0px;
+      margin-right: 20px;
+    }
+
+    .sport, .number{
+      width: 110px;
+    }
+
+    .location, .ability{
+      width: 200px;
+    }
+    
+    .author{
+      position: relative;
+      margin-bottom: 5px;
+    }
+
+    .button-container2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px; /* 設定高度以便於示範效果 */
+    width: 380px;
+    position: fixed;
+    bottom: 20px;
+    background: rgba(0,0,0.5,0.4);/*半透明度*/
+    border-radius: 50px;
+    border: 4px solid #664D9A;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    }
+
+    button {
+    /*margin: 0 100px;  設定按鈕之間的間距 */
+     border: none;
+     background-color:  #664D9A;
+     border-radius: 50px;
+     
+     margin: 0 30px;   
+    }
+
+    .small{
+      height: 30px;
+      width: 30px;
+    }
+
+    .big{
+      height: 45px;
+      width: 45px;
+    }
+
+
+        
+
+
+	</style>
+
+</head>
+<body>
+    <div class="container" id="ps">
+      <div class="profile">
+        <div class="profile-header">
+          <img src="女生.jpg" alt="Profile Picture"></div>
+          <div class ="discription">
+            <div class="first-container ">
+              <p class="left">呂孩子</p>
+              <div class="button-container ">
+              <button class="edit" onclick="location.href='///C:/Users/Desktop/前端_sportify/info.html'"><i class="fa-solid fa-pen fa-xl right"></i></button>
+              </div>
+            </div>  
+            <p class="discription-text">國立政治大學  資訊管理學系</p>
+            <p class="discription-text">🤍 籃球、足球、躲避球</p>
+          </div>
+          
+        </div>
+      
+      
+      
+        <div class="profile-stats">
+          <div>
+            <span style="text-decoration: underline;">我的揪團
+          </span>
+          </div>
+          <div>
+            <span class="popup" onclick="location.href='C:/Users/peiyi/Desktop/前端_sportify/personalPost_我的排隊.html'">我的排隊
+          </span>
+          </div>
+          <div>
+            <span class="popup" onclick="location.href='C:/Users/peiyi/Desktop/前端_sportify/personalPost_自己的角度.html'">過往 & 評價</span>
+          </div>
+        </div>
+        <br>
+      
+      
+        <div>
+          <script>
+
+var postsData = [
+    {
+        "author": "呂孩子",
+        "sport": "籃球",
+        "location": "體育館",
+        "number": "6",
+        "ability": "",
+        "eventTime": "2023-08-09 14:00"
+    },
+    
+];
+
+      for (var i = 0; i < postsData.length; i++) {
+        var post = postsData[i];
+        var id = i+1;
+        var btnId = 'hiddenPost' + id;
+      
+        var nameContainer = document.createElement('div');
+        nameContainer.className = 'nameContainer';
+  
+        var imgElement = document.createElement('img');
+        imgElement.className = 'post-img';
+        imgElement.src = '大頭貼.jpg';
+        nameContainer.appendChild(imgElement);
+
+        var authorElement = document.createElement('p');
+        authorElement.className = 'author';
+        authorElement.textContent = post.author;
+        nameContainer.appendChild(authorElement);
+        document.getElementById('ps').appendChild(nameContainer);
+
+        var postContainer = document.createElement('div');
+        postContainer.className = 'post';
+
+        var twoThingContainer1 = document.createElement('div');
+        twoThingContainer1.className = "twoThings";
+
+        var sportElement = document.createElement('span');
+        sportElement.className = 'sport';
+        sportElement.textContent =  '項目：' + post.sport;
+        twoThingContainer1.appendChild(sportElement);
+
+        var locationElement = document.createElement('span');
+        locationElement.className = 'location';
+        locationElement.textContent = "地點：" + post.location;
+        twoThingContainer1.appendChild(locationElement);
+        postContainer.appendChild(twoThingContainer1);
+
+        var twoThingContainer2 = document.createElement('div');
+        twoThingContainer2.className = "twoThings";
+
+        var numberElement = document.createElement('span');
+        numberElement.className = 'number';
+        numberElement.textContent = '人數：' + post.number + '人';
+        twoThingContainer2.appendChild(numberElement);
+
+        var abilityElement = document.createElement('span');
+        abilityElement.className = 'ability';
+        abilityElement.textContent = '能力：' + post.ability;
+        twoThingContainer2.appendChild(abilityElement);
+        postContainer.appendChild(twoThingContainer2);
+  
+        var eventTimeElement = document.createElement('p');
+        eventTimeElement.className = 'eventTime';
+        eventTimeElement.textContent = "時間：" + post.eventTime;
+        postContainer.appendChild(eventTimeElement);
+
+        var buttonElement = document.createElement('button');
+
+        //console.log(btnId);
+        buttonElement.onclick = function(){
+          var Id = this.id;
+          var ID = 'hiddenPost' + Id;
+          //console.log(ID); //對的
+          
+          toggleContainer(ID); //ID值傳不進去
+        };
+        buttonElement.id = i+1;
+        buttonElement.textContent = '排隊情況';
+        //console.log(buttonElement.onclick);
+        
+        postContainer.appendChild(buttonElement);
+
+        var hiddenContainer = document.createElement('div');
+        hiddenContainer.className = 'hidden-post';
+        hiddenContainer.id = btnId;
+        //Set style
+        hiddenContainer.style.display = "none"; 
+        hiddenContainer.style.borderBottomRightRadius = '24px'; 
+        hiddenContainer.style.borderTopRightRadius = '24px'; 
+        hiddenContainer.style.height = '170px';
+        hiddenContainer.style.width = '115px'; 
+        hiddenContainer.style.padding = '10px'; 
+        hiddenContainer.style.backgroundColor = '#ffffff';
+        hiddenContainer.style. position = 'relative';
+        hiddenContainer.style.left = '260px';
+        hiddenContainer.style.bottom = '177px';
+        hiddenContainer.style.overflowY = 'scroll';
+        
+
+        var inLine = document.createElement('p');
+        inLine.textContent = "排隊的人1";
+        var inLine2 = document.createElement('p');
+        inLine2.textContent = "排隊的人2";
+        var inLine3 = document.createElement('p');
+        inLine3.textContent = "排隊的人3";
+        var inLine4 = document.createElement('p');
+        inLine4.textContent = "排隊的人4";
+        var inLine5 = document.createElement('p');
+        inLine5.textContent = "排隊的人5";
+        var inLine6 = document.createElement('p');
+        inLine6.textContent = "排隊的人6";
+        var inLine7 = document.createElement('p');
+        inLine7.textContent = "排隊的人7";
+        var inLine8 = document.createElement('p');
+        inLine8.textContent = "排隊的人8";
+        hiddenContainer.appendChild(inLine);
+
+        hiddenContainer.appendChild(inLine2);
+
+        hiddenContainer.appendChild(inLine3);
+
+        hiddenContainer.appendChild(inLine4);
+
+        hiddenContainer.appendChild(inLine5);
+
+        hiddenContainer.appendChild(inLine6);
+
+        hiddenContainer.appendChild(inLine7);
+        
+        hiddenContainer.appendChild(inLine8);
+        postContainer.appendChild(hiddenContainer);
+
+        document.getElementById('ps').appendChild(postContainer);
+
+        
+
+      }
+
+    /*排隊列表出現跟隱藏*/
+    //var isHidden = true;
+    function toggleContainer(hiddenPost) {
+      //console.log(hiddenPost);
+      var hiddenContainer = document.getElementById(hiddenPost);
+      
+      if(hiddenContainer.style.display === ""){
+        hiddenContainer.style.display = "none";
+      }
+
+      if (hiddenContainer.style.display === "none") {
+        showContainer(hiddenContainer);
+      } else {
+        hideContainer(hiddenContainer);
+      }
+    }
+
+    function showContainer(container) {
+      container.style.display = "block";
+      //isHidden = false;
+    }
+
+    function hideContainer(container) {
+      container.style.display = "none";
+      //isHidden = true;
+    }
+    </script>
+    </div>
+    <br><br><br>
+ </div>
+  </body>
+</html>

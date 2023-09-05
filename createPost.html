@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>建立貼文</title>
+  <style>
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f0f3;
+    }
+
+    .container {
+      max-width: 400px;
+      height: 850px;
+      margin: 0 auto;
+      padding: 25px;
+      background-color: #322C3F;
+      border-radius: 24px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      justify-content: center;
+      align-items: center;
+    }
+
+
+    .form-container{
+        justify-content: center;
+        align-items: center; 
+        background-color: #473952;
+        border-radius: 24px;
+        padding: 25px;
+        margin-bottom: 20px;
+        margin-left: 8px;
+        margin-right: 8px;
+    }
+
+    .container .form-container input{
+      color: whitesmoke;
+    }
+
+
+    .button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px; 
+    width: 380px;
+    position: fixed;
+    bottom: 20px;
+    background: rgba(0,0,0.5,0.4);
+    border-radius: 50px;
+    border: 4px solid #664D9A;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    }
+
+    button {
+     border: none;
+     background-color:  #664D9A;
+     border-radius: 50px;
+     
+     margin: 0 30px;   
+    }
+
+    .small{
+      height: 30px;
+      width: 30px;
+    }
+
+    .big{
+      height: 45px;
+      width: 45px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 15px;
+      margin-top: 10px;
+      font-size: 2.5em;
+    }
+
+    
+    input[type="text"] {
+    /*display: block;*/
+    width: 75%;
+    margin: 0 auto; 
+    margin-bottom: 18px;
+    padding: 9px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    background: transparent;
+    border-bottom: 2px solid #ffffff;
+    }   
+
+
+    input[type="submit"] {
+    display: block;
+    width: 180px;
+    margin: 0 auto;
+    padding: 10px;
+    font-size: 19px;
+    border-radius: 18px;
+    background-color: #664D9A;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    margin-bottom: -5px;
+    }
+  
+
+    .error-message {
+      color: #f00;
+      margin-bottom: 10px;
+    }
+
+    label {
+    display: block;
+    margin-bottom: 10px;
+    }
+
+    select {
+    background-color: #f1f1f1;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width:85%;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <h2 style="color:#ffffff">建 立 貼 文</h2>
+    <div class="form-container">
+    <form>
+      <label style="color:#ffffff ">項目：
+      <input type="text" name="sport"  placeholder="例：足球" required>
+      </label>
+      <br><br><br>
+      <label style="color:#ffffff">時間：
+      <input type="text" name="time"  placeholder="例：2023/05/09 14:00" required>
+      </label>
+<br><br><br>
+      <label style="color:#ffffff">地點：
+      <input type="text" name="location"  placeholder="例：政大體育館桌球室" required>
+      </label>
+      <br><br><br>
+      <label style="color:#ffffff">人數：
+      <input type="text" name="players"  placeholder="例：3" required>
+      </label>
+      <br><br><br>
+      <label style="color:#ffffff">能力：
+      <input type="text" name="ability"></label>
+      <br><br><br>
+      <input type="submit" value="送出">
+    </div>
+    </form>
+    </div>
+
+  </div>
+</body>
+</html>

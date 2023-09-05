@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>評價</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f0f3;
+    }
+
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 25px;
+      background-color: #322C3F;
+      border-radius: 24px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      color: whitesmoke;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 15px;
+      margin-top: 15px;
+      font-size: 2.5em;
+    }
+
+    .center {
+      margin-top: -100px;  
+      margin-left: 100px;
+      margin-right: auto;
+      display: block;
+    }
+
+    
+
+    .profile-stat {
+      display: flex;
+      flex:2; 
+      flex-direction: column;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      max-width: 2/3%;
+      height: 100px;
+      background-color: #473952;
+      border-radius: 24px;
+      padding: 25px;
+    }
+    .img {
+      flex:1;
+      max-width: 1/4%;
+      height: 70px;
+      border-radius: 50%;
+      margin-bottom: 0px;
+    }
+
+    .name{
+        margin-bottom: 8px;
+        margin-top: 25px;
+        font-size: 23px;;
+    }
+    .comment{
+        margin-top: 12px;
+    }
+    
+
+    /*五星*/
+    .rating {
+      direction: rtl;
+      unicode-bidi: bidi-override;
+      text-align: left;
+    }
+
+    .rating input[type="radio"] {
+      display: none;
+    }
+
+    .rating label {
+      font-size: 24px;
+      color: gray;
+      cursor: pointer;
+    }
+
+    .rating label:before{
+      content: "\2605";
+      position:relative;
+    }
+
+
+    .rating input[type="radio"]:checked ~ label:before,
+    .rating input[type="radio"]:hover ~ label:before {
+      background: linear-gradient(to right, gold 0%, gold 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    
+  </style>
+
+
+
+</head>
+<body>
+  <div class="container">
+    <h2>評 價</h2>
+    
+    <div class ="profile-stat">
+        <div class="left">
+          <img class="img" src="大頭貼.jpg">
+        </div>    
+        <div class="center">
+          <h3 class="name">小美女</h3>
+          <div class="rating">
+            <input type="radio" id="star1" name="rating1" value="1">
+            <label for="star1"></label>
+            <input type="radio" id="star2" name="rating1" value="2">
+            <label for="star2"></label>
+            <input type="radio" id="star3" name="rating1" value="3">
+            <label for="star3"></label>
+            <input type="radio" id="star4" name="rating1" value="4">
+            <label for="star4"></label>
+            <input type="radio" id="star5" name="rating1" value="5">
+            <label for="star5"></label>
+          </div>
+          <p class="comment">是個漂亮妹妹，球也打得很好！</p>
+        </div>
+      </div>
+      
+
+      <div class ="profile-stat">
+        <div class="left">
+          <img class="img" src="大頭貼.jpg">
+        </div>    
+        <div class="center">
+          <h3 class="name">小媒女</h3>
+          <div class="rating">
+            <input type="radio" id="star6" name="rating2" value="1">
+            <label for="star6"></label>
+            <input type="radio" id="star7" name="rating2" value="2">
+            <label for="star7"></label>
+            <input type="radio" id="star8" name="rating2" value="3">
+            <label for="star8"></label>
+            <input type="radio" id="star9" name="rating2" value="4">
+            <label for="star9"></label>
+            <input type="radio" id="star10" name="rating2" value="5">
+            <label for="star10"></label>
+          </div>
+          <p class="comment">原PO很準時讚讚</p>
+        </div>
+      </div>
+
+      <div class ="profile-stat">
+        <div class="left">
+          <img class="img" src="大頭貼.jpg">
+        </div>    
+        <div class="center">
+          <h3 class="name">小黴女</h3>
+          <div class="rating">
+            <input type="radio" id="star11" name="rating3" value="1">
+            <label for="star11"></label>
+            <input type="radio" id="star12" name="rating3" value="2">
+            <label for="star12"></label>
+            <input type="radio" id="star13" name="rating3" value="3">
+            <label for="star13"></label>
+            <input type="radio" id="star14" name="rating3" value="4">
+            <label for="star14"></label>
+            <input type="radio" id="star15" name="rating3" value="5">
+            <label for="star15"></label>
+          </div>
+          <p class="comment">我只能說球技一般</p>
+        </div>
+      </div>
+    </div>
+  </div>
+    
+    
+      
+
+      <script>
+        const ratingInputs1 = document.querySelectorAll('input[name="rating1"]');
+        ratingInputs1.forEach(input => {
+        input.addEventListener('change', () => {
+        console.log('第一组评分：', input.value);
+        });
+        });
+
+        const ratingInputs2 = document.querySelectorAll('input[name="rating2"]');
+        ratingInputs2.forEach(input => {
+        input.addEventListener('change', () => {
+        console.log('第二组评分：', input.value);
+        });
+        });
+
+        const ratingInputs3 = document.querySelectorAll('input[name="rating3"]');
+        ratingInputs3.forEach(input => {
+        input.addEventListener('change', () => {
+        console.log('第三组评分：', input.value);
+        });
+        });
+
+
+
+      </script>
+
+
+
+</body>
+</html>

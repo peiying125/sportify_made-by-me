@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>編輯基本資料</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f0f3;
+    }
+
+    .container {
+      max-width: 400px;
+      height: 750px;
+      margin: 0 auto;
+      padding: 25px;
+      background-color: #322C3F;
+      border-radius: 24px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .container .form-container input{
+    border: none;
+    outline: none;
+    background: #473952;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    
+    input[type="text"], input[type="date"], input[type="submit"] {
+    display: block;
+    width: 63%;
+    margin: 0 auto;
+    margin-right: 30px;
+    margin-bottom: 15px;
+    padding: 13px;
+    font-size: 16px;
+    border-radius: 25px;
+    border: 1px solid #ccc;
+    color: whitesmoke;
+    }   
+
+
+    .error-message {
+      color: #f00;
+      margin-bottom: 10px;
+    }
+
+    .image{
+      display: block;  
+      margin: 0 auto;
+      margin-top: 30px;
+      height: 80px;
+    }
+
+    label {
+    display: block;
+    margin-bottom: 10px;
+    text-align: center;
+    }
+
+    p{
+      color: whitesmoke;
+      margin-bottom: -30px;
+      margin-left: -320px;
+      margin-top: 25px;
+    }
+
+    input[type="button"] {
+      display: block;
+      width: 120px;
+      margin: 0 auto;
+      margin-bottom: 15px;
+      padding: 13px;
+      font-size: 16px;
+      border-radius: 25px;
+      background-color: #92928E;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    input[type="button2"] {
+      display: block;
+      width: 70px;
+      margin: 0 auto;
+      margin-bottom: 15px;
+      padding: 13px;
+      text-align:center;
+      font-size: 16px;
+      border-radius: 25px;
+      background-color: #664D9A;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  
+  <div class="container">
+     <img class="image" src="logo.png"> <br>
+      <div class="title">
+        <h2 style="color:#ffffff">編 輯 基 本 資 料</h2>
+      </div>
+    <div class="form-container">
+      <label><p>暱稱</p><input type="text" name="nickname" required></label>
+      <label><p>電話</p><input type="text" name="phone" required></label>
+      <label><p>住址</p><input type="text" name="address"required></label>
+      <label><p>學校</p><input type="text" name="school"required></label>
+      <label><p>科系</p><input type="text" name="major"></label>
+      <label><p>喜歡的運動</p><input type="text" name="sport"required></label>
+    </div><br>
+      <input type="button" value="送出" onclick=location.href="C:/Users/peiyi/Desktop/前端_sportify/personalPost_自己的角度.html"><br><br><br>
+      <input type="button2" value="登出" onclick=location.href="C:/Users/peiyi/Desktop/前端_sportify/login.html">
+    </form>
+  </div>
+</body>
+</html>

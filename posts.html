@@ -1,0 +1,397 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <script src="https://kit.fontawesome.com/385564b33e.js" crossorigin="anonymous"></script>
+  <title>Posts</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f0f3;
+    }
+
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      margin-top: 0px;
+      padding: 25px;
+      background-color: #322C3F;
+      border-radius: 24px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo{
+      display: block;  
+      margin: 0 auto;
+      margin-top: 0px;
+      height: 80px;
+      margin-bottom: 0px;
+    }
+
+
+    .post {
+        justify-content: flex-start;
+        width: 340px;
+        height: 130px;
+        border-radius: 24px;
+        padding: 30px;
+        margin-top: 30px;
+        margin-bottom: 0px;
+        background-color: #473952;
+        
+    }
+
+
+    .post-img {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        position: absolute;
+    }
+
+  .post textarea {
+        width: 200%;
+        height: 500px;
+        border: none;
+        resize: none;
+    }
+
+    .post button {
+      display: block;
+      margin-top: 0px;
+      margin-left: 175px;
+      padding: 5px 10px;
+      background-color: #664D9A;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+    }
+
+    .post p,span{
+      color: white;
+      margin-top: 16px;
+      margin-bottom: 5px;
+      margin-left: -12px;
+    }
+
+    .hidden-post p{
+      color:black;
+      margin-top: 0px;
+      margin-bottom: 10px;
+      margin-left: 0px;
+    }
+
+    .nameContainer p{
+      color: white;
+      font-size: 20px;
+      margin-top: 40px;
+      margin-left: 85px;
+      position: absolute;
+    }
+
+    .twoThings{
+      margin-top: 16px;
+    }
+
+    .twoThings span{
+      display: inline-block;
+      color: white;
+    
+      margin-top: 2px;
+      margin-bottom: 0px;
+      margin-right: 20px;
+    }
+
+    .sport, .number{
+      width: 110px;
+    }
+
+    .location, .ability{
+      width: 200px;
+    }
+    
+    .author{
+      position: relative;
+      margin-bottom: 5px;
+    }
+
+    .button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px; 
+    width: 380px;
+    position: fixed;
+    bottom: 20px;
+    background: rgba(0,0,0.5,0.4);
+    border-radius: 50px;
+    border: 4px solid #664D9A;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    }
+
+    button {
+     border: none;
+     background-color:  #664D9A;
+     border-radius: 50px;
+     
+     margin: 0 30px;   
+    }
+
+    .small{
+      height: 30px;
+      width: 30px;
+    }
+
+    .big{
+      height: 45px;
+      width: 45px;
+    }
+
+    .lastPageBtn { 
+      display: flex;
+      margin-top: -3px;
+      margin-left: 90px;
+      padding: 5px 10px;
+      background-color: #664D9A;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      position: absolute;
+    }
+
+    .nextPageBtn { 
+      display: flex;
+      margin-top: -40.5px;
+      margin-left: 250px;
+      padding: 5px 10px;
+      background-color: #664D9A;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      position: absolute;
+    }
+
+    .page{
+      position: relative;
+      margin-top: 17px;
+      color: white;
+      text-align: center;
+    }
+  
+  </style>
+
+</head>
+<body>
+    <div class="container" id="ps">
+      <img class="logo" src="logo.png" > 
+        <div>
+          <script>
+
+     var postsData = [
+    {
+        "author": "Jack",
+        "sport": "籃球",
+        "location": "體育館",
+        "number": "6",
+        "ability": "",
+        "eventTime": "2023-08-09 14:00"
+    },
+    {
+        "author": "Mina",
+        "sport": "棒球",
+        "location": "河堤棒球場",
+        "number": "12",
+        "ability": "",
+        "eventTime": "2023-07-23 19:00"
+    },
+    {
+        "author": "Mary",
+        "sport": "羽球",
+        "location": "羽球館",
+        "number": "3",
+        "ability": "",
+        "eventTime": "2023-06-16 13:00"
+    },
+    {
+        "author": "Kevin",
+        "sport": "跑步",
+        "location": "河堤",
+        "number": "1",
+        "ability": "",
+        "eventTime": "2023-07-31 15:00"
+    },
+    {
+        "author": "David",
+        "sport": "羽球",
+        "location": "體育館",
+        "number": "3",
+        "ability": "",
+        "eventTime": "2023-08-09 14:00"
+    }
+];
+
+      for (var i = 0; i < postsData.length; i++) {
+        var post = postsData[i];
+        var id = i+1;
+        var btnId = 'hiddenPost' + id;
+      
+        var nameContainer = document.createElement('div');
+        nameContainer.className = 'nameContainer';
+  
+        var imgElement = document.createElement('img');
+        imgElement.className = 'post-img';
+        imgElement.src = '大頭貼.jpg';
+        nameContainer.appendChild(imgElement);
+
+        var authorElement = document.createElement('p');
+        authorElement.className = 'author';
+        authorElement.textContent = post.author;
+        nameContainer.appendChild(authorElement);
+        document.getElementById('ps').appendChild(nameContainer);
+
+        var postContainer = document.createElement('div');
+        postContainer.className = 'post';
+
+        var twoThingContainer1 = document.createElement('div');
+        twoThingContainer1.className = "twoThings";
+
+        var sportElement = document.createElement('span');
+        sportElement.className = 'sport';
+        sportElement.textContent =  '項目：' + post.sport;
+        twoThingContainer1.appendChild(sportElement);
+
+        var locationElement = document.createElement('span');
+        locationElement.className = 'location';
+        locationElement.textContent = "地點：" + post.location;
+        twoThingContainer1.appendChild(locationElement);
+        postContainer.appendChild(twoThingContainer1);
+
+        var twoThingContainer2 = document.createElement('div');
+        twoThingContainer2.className = "twoThings";
+
+        var numberElement = document.createElement('span');
+        numberElement.className = 'number';
+        numberElement.textContent = '人數：' + post.number + '人';
+        twoThingContainer2.appendChild(numberElement);
+
+        var abilityElement = document.createElement('span');
+        abilityElement.className = 'ability';
+        abilityElement.textContent = '能力：' + post.ability;
+        twoThingContainer2.appendChild(abilityElement);
+        postContainer.appendChild(twoThingContainer2);
+  
+        var eventTimeElement = document.createElement('p');
+        eventTimeElement.className = 'eventTime';
+        eventTimeElement.textContent = "時間：" + post.eventTime;
+        postContainer.appendChild(eventTimeElement);
+
+        var buttonElement = document.createElement('button');
+
+        buttonElement.onclick = function(){
+          var Id = this.id;
+          var ID = 'hiddenPost' + Id;          
+          toggleContainer(ID); //ID值傳不進去
+        };
+        buttonElement.id = i+1;
+        buttonElement.textContent = '排隊情況';
+        
+        postContainer.appendChild(buttonElement);
+
+        var hiddenContainer = document.createElement('div');
+        hiddenContainer.className = 'hidden-post';
+        hiddenContainer.id = btnId;
+        hiddenContainer.style.display = "none"; 
+        hiddenContainer.style.borderBottomRightRadius = '24px'; 
+        hiddenContainer.style.borderTopRightRadius = '24px'; 
+        hiddenContainer.style.height = '170px';
+        hiddenContainer.style.width = '115px'; 
+        hiddenContainer.style.padding = '10px'; 
+        hiddenContainer.style.backgroundColor = '#ffffff';
+        hiddenContainer.style. position = 'relative';
+        hiddenContainer.style.left = '260px';
+        hiddenContainer.style.bottom = '177px';
+        hiddenContainer.style.overflowY = 'scroll';
+        
+
+        var inLine = document.createElement('p');
+        inLine.textContent = "排隊的人1";
+        var inLine2 = document.createElement('p');
+        inLine2.textContent = "排隊的人2";
+        var inLine3 = document.createElement('p');
+        inLine3.textContent = "排隊的人3";
+        var inLine4 = document.createElement('p');
+        inLine4.textContent = "排隊的人4";
+        var inLine5 = document.createElement('p');
+        inLine5.textContent = "排隊的人5";
+        var inLine6 = document.createElement('p');
+        inLine6.textContent = "排隊的人6";
+        var inLine7 = document.createElement('p');
+        inLine7.textContent = "排隊的人7";
+        var inLine8 = document.createElement('p');
+        inLine8.textContent = "排隊的人8";
+        hiddenContainer.appendChild(inLine);
+
+        hiddenContainer.appendChild(inLine2);
+
+        hiddenContainer.appendChild(inLine3);
+
+        hiddenContainer.appendChild(inLine4);
+
+        hiddenContainer.appendChild(inLine5);
+
+        hiddenContainer.appendChild(inLine6);
+
+        hiddenContainer.appendChild(inLine7);
+        
+        hiddenContainer.appendChild(inLine8);
+        postContainer.appendChild(hiddenContainer);
+
+        document.getElementById('ps').appendChild(postContainer);
+
+
+      }
+
+    /*排隊列表出現跟隱藏*/
+    //var isHidden = true;
+    function toggleContainer(hiddenPost) {
+      var hiddenContainer = document.getElementById(hiddenPost);
+      
+      if(hiddenContainer.style.display === ""){
+        hiddenContainer.style.display = "none";
+      }
+
+      if (hiddenContainer.style.display === "none") {
+        showContainer(hiddenContainer);
+      } else {
+        hideContainer(hiddenContainer);
+      }
+    }
+
+    function showContainer(container) {
+      container.style.display = "block";
+      //isHidden = false;
+    }
+
+    function hideContainer(container) {
+      container.style.display = "none";
+      //isHidden = true;
+    }
+    </script>
+    </div>
+  
+    <br><br><br>
+    <div class="button-container ">
+    <button class="big" onclick="location.href='C:/Users/peiyi/Desktop/前端_sportify/posts.html'"><i class="fa-solid fa-house fa-2xl"></i></button>
+    <button class="small" onclick="location.href='C:/Users/peiyi/Desktop/前端_sportify/createPost.html'"><i class="fa-solid fa-plus fa-xl"></i></button>
+    <button class="small" onclick="location.href='C:/Users/peiyi/Desktop/前端_sportify/personalPost_自己的角度.html'"><i class="fa-solid fa-user fa-lg"></i></button>
+    </div> 
+        
+        
+ </div>
+
+  </body>
+</html>
